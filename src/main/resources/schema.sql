@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS pet (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255),
-    species VARCHAR(255),
+    name VARCHAR(50) NOT NULL,
+    species VARCHAR(50) NOT NULL,
     age INT,
     other_name VARCHAR(255)
 );
