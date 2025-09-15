@@ -4,8 +4,7 @@ import com.entities.Pet;
 import com.services.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,4 +19,8 @@ public class PetController {
         return ResponseEntity.ok(petService.getAllPets());
     }
 
+    @PostMapping(value = "/pets")
+    public ResponseEntity<Pet> createPet(@RequestBody Pet pet) {
+        return ResponseEntity.ok(petService.createPet(pet));
+    }
 }

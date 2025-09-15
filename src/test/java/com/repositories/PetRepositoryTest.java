@@ -3,6 +3,7 @@ package com.repositories;
 import com.entities.Pet;
 import java.util.List;
 
+import com.utils.TestUtils;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +21,11 @@ public class PetRepositoryTest {
     @Test
     void test_PetRepositoryLoadsLucky_WhenItLoads() {
         List<Pet> pets = petRepository.findAll();
-        Pet lucky = pets.stream().findFirst().get();
+        Pet pet = pets.stream().findFirst().get();
 
         Assertions.assertThat(pets.size()).isEqualTo(1);
-        Assertions.assertThat(lucky.getId()).isEqualTo(1L);
-        Assertions.assertThat(lucky.getName()).isEqualTo("Lucky");
-        Assertions.assertThat(lucky.getSpecies()).isEqualTo("Dog");
-        Assertions.assertThat(lucky.getAge()).isGreaterThanOrEqualTo(0);
-        Assertions.assertThat(lucky.getOtherName()).isEqualTo("Luckysinho");
+        TestUtils.assertPetIsLucky(pet);
     }
+
 
 }

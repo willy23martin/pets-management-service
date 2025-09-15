@@ -34,8 +34,7 @@ public class Pet {
 
     protected Pet(){} // JPA
 
-    public Pet(@NotNull Long id, @NotNull String name, @NotNull String species) {
-        this.id = id;
+    public Pet(@NotNull String name, @NotNull String species) {
         this.name = name;
         this.species = species;
     }

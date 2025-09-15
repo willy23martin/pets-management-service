@@ -13,7 +13,7 @@ public class PetsManagementServiceTest {
     private ApplicationContext context;
 
     @Test
-    void test_ApplicationContextLoads_WhenServiceIsExecuted(){
+    void test_ApplicationContextLoads_WhenServiceIsExecuted() {
         Assertions.assertNotNull(context);
     }
 

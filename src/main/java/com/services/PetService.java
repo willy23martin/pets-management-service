@@ -17,4 +17,7 @@ public class PetService {
         return petRepository.findAll();
     }
 
+    public Pet createPet(Pet pet) {
+        return petRepository.save(pet);
+    }
 }
