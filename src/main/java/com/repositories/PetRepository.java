@@ -1,4 +1,4 @@
-package com.repository;
+package com.repositories;
 
 import com.entities.Pet;
 import org.springframework.data.jpa.repository.JpaRepository;
