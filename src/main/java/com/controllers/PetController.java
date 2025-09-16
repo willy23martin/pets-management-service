@@ -16,7 +16,7 @@ public class PetController {
     @Autowired
     private PetService petService;
 
-    @GetMapping(value = "/pets")
+    @GetMapping("/pets")
     public ResponseEntity<List<Pet>> getAllPets(){
         return ResponseEntity.ok(petService.getAllPets());
     }
@@ -31,7 +31,7 @@ public class PetController {
         }
     }
 
-    @PostMapping(value = "/pets")
+    @PostMapping("/pets")
     public ResponseEntity<Pet> createPet(@Valid @RequestBody Pet pet) {
         return ResponseEntity.ok(petService.createPet(pet));
     }
@@ -41,6 +41,16 @@ public class PetController {
         try {
             Pet updatedPet = petService.updatePet(id, pet);
             return ResponseEntity.ok(updatedPet);
+        } catch(Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping(value = "/pets/{id}")
+    public ResponseEntity<Pet> deletePetById(@PathVariable Long id){
+        try {
+            Pet pet = petService.deletePetById(id);
+            return ResponseEntity.ok(pet);
         } catch(Exception e) {
             return ResponseEntity.notFound().build();
         }

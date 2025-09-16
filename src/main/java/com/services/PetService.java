@@ -39,4 +39,14 @@ public class PetService {
             throw new Exception("Pet with id: " + id + " was not found.");
         }
     }
+
+    public Pet deletePetById(Long id) throws Exception {
+        Optional<Pet> currentPet = petRepository.findById(id);
+        if(currentPet.isPresent()) {
+            petRepository.deleteById(id);
+            return currentPet.get();
+        } else {
+            throw new Exception("Pet with id: " + id + " was not found.");
+        }
+    }
 }

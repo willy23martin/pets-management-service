@@ -145,4 +145,40 @@ public class PetControllerIntegrationTest {
         Assertions.assertThat(petResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
+    @Test
+    void test_DeletePetInformation_WhenDeletePetByIdIsCalled() throws JsonProcessingException {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        ResponseEntity<Pet> petResponse = testRestTemplate.exchange(
+                URL + port + "/pets/{id}",
+                HttpMethod.DELETE,
+                HttpEntity.EMPTY,
+                Pet.class,
+                savedPet.getId()
+        );
+
+        Assertions.assertThat(petResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
+        Assertions.assertThat(petResponse.getBody()).isNotNull();
+
+        TestUtils.assertPetIsLucky(petResponse.getBody());
+    }
+
+    @Test
+    void test_NotFound_WhenDeletePetByIdIsCalledWithAnInvalidPetId() {
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        ResponseEntity<Pet> petResponse = testRestTemplate.exchange(
+                URL + port + "/pets/{id}",
+                HttpMethod.DELETE,
+                HttpEntity.EMPTY,
+                Pet.class,
+                2000L
+        );
+
+        Assertions.assertThat(petResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+    }
+
 }
