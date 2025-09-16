@@ -12,6 +12,13 @@ public class TestUtils {
         Assertions.assertThat(pet.getOtherName()).isEqualTo("Luckysinho");
     }
 
+    public static void assertPetIsUpdatedLucky(Pet pet) {
+        Assertions.assertThat(pet.getName()).isEqualTo("Lucky updated");
+        Assertions.assertThat(pet.getSpecies()).isEqualTo("Dog");
+        Assertions.assertThat(pet.getAge()).isGreaterThanOrEqualTo(0);
+        Assertions.assertThat(pet.getOtherName()).isNull();
+    }
+
     public static void assertPetIsRocky(Pet pet) {
         Assertions.assertThat(pet.getName()).isEqualTo("Rocky");
         Assertions.assertThat(pet.getSpecies()).isEqualTo("Cat");

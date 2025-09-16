@@ -13,23 +13,31 @@ import lombok.Setter;
 
 @Entity
 @Table
-@Getter
-@Setter
 public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
     private Long id;
 
     @Column(nullable = false)
     @NotBlank
+    @Getter
+    @Setter
     private String name;
 
     @Column(nullable = false)
     @NotBlank
+    @Getter
+    @Setter
     private String species;
 
+    @Getter
+    @Setter
     private int age;
+
+    @Getter
+    @Setter
     private String otherName;
 
     protected Pet(){} // JPA

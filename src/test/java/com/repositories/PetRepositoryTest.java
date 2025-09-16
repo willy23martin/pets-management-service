@@ -27,5 +27,4 @@ public class PetRepositoryTest {
         TestUtils.assertPetIsLucky(pet);
     }
 
-
 }
