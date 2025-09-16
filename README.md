@@ -50,7 +50,7 @@ The application must provide a set of REST APIs for accessing the Pet entity.
 
 ![openapi.jpg](src%2Fdocs%2Fopenapi%2Fopenapi.jpg)
 
-#### Get /pet/{id} endpoint:
+#### Get /pets/{id} endpoint:
 
 ![getpetsbyidendpoint.jpg](src%2Fdocs%2Fopenapi%2Fgetpetsbyidendpoint.jpg)
 
