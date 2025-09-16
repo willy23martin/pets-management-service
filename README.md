@@ -10,7 +10,7 @@ information.
 
 ## Requirements:
 
-- The candidate must implement a Spring Boot application with Java 17+.
+- Implement a Spring Boot application with Java 17+.
 - Use of a relational database. For the purpose of this exercise, it is sufficient to mock
 database access services.
 - Exposure of REST APIs using Spring Web.
@@ -40,7 +40,7 @@ The application must provide a set of REST APIs for accessing the Pet entity.
 ### How to Run it?
 
 - Go to the project directory and execute ``` mvn spring-boot:run ```.
-- Access it via: Swagget UI.
+- Access it via: Swagger UI.
 
 ******
 

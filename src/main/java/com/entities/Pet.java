@@ -33,7 +33,6 @@ public class Pet {
     private String species;
 
     @Getter
-    @Setter
     private int age;
 
     @Getter
